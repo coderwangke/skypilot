@@ -699,12 +699,12 @@ def status(
         if isinstance(service_names, str):
             service_names = [service_names]
 
-    try:
-        backend_utils.check_network_connection()
-    except exceptions.NetworkError as e:
-        with ux_utils.print_exception_no_traceback():
-            raise RuntimeError(
-                'Failed to refresh service status due to network error.') from e
+    # try:
+    #     backend_utils.check_network_connection()
+    # except exceptions.NetworkError as e:
+    #     with ux_utils.print_exception_no_traceback():
+    #         raise RuntimeError(
+    #             'Failed to refresh service status due to network error.') from e
 
     controller_type = controller_utils.Controllers.SKY_SERVE_CONTROLLER
     handle = backend_utils.is_controller_accessible(
